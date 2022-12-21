@@ -15,7 +15,8 @@
             padding-bottom: 3px;
             background-color: rgb(175, 255, 228);
         }
-        .header{
+
+        .header {
             display: flex;
             align-items: center;
         }
@@ -23,14 +24,15 @@
         input {
             background-color: rgb(218, 218, 218);
         }
+
         .icone {
             width: 100px;
             height: 100px;
         }
-        .main-div{
+
+        .main-div {
             height: 100vh;
         }
-
     </style>
 </head>
 
@@ -45,18 +47,29 @@
             <div class="col-md-6">
                 <form action="https://api.whatsapp.com/send?" method="get">
                     <div class="form-group">
-                        <label for="phone">Telefone:</label>
-                        <input class="form-control" type="text" id="phone" name="phone" id="phone" maxlength="13"><br>
-                        <label for="text">Texto:</label>
-                        <input class="form-control" type="text" name="text" id="text" value="Olá"><br>
-                        <button class="btn btn-primary"type="submit" >Conversar</button>
+                        <label class="form-label" for="phone">Celular:</label>
+                        <input class="form-control input-phone" type="text" id="phone" name="phone" id="phone"
+                            maxlength="15">
+                        <label class="form-label" for="text">Digite sua mensagem:</label>
+                        <textarea class="form-control" rows="3" name="text" id="text" value="Olá"
+                            maxlength="150"></textarea><br>
+                        <button class="btn btn-primary" type="submit">Conversar</button>
                     </div>
                 </form>
+            </div>
         </div>
     </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
+        integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/addons/cleave-phone.br.js"></script>
+    <script>
+        var cleave = new Cleave('.input-phone', {
+            phone: true,
+            phoneRegionCode: 'br'
+        });
+    </script>
 
-    <script src="main.js"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
